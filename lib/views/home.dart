@@ -83,8 +83,28 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          _bottomNavigationBar(
-            textField: TextField(
+          _bottomNavigationBar(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _bottomNavigationBar(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.only(top: 15),
+          margin: const EdgeInsets.only(left: 2, right: 5, bottom: 1),
+          width: MediaQuery.of(context).size.width * 0.7,
+          // height: 55.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.purple.withOpacity(0.5),
+          ),
+          child: SizedBox(
+            width: 200,
+            // width: MediaQuery.of(context).size.width - 90,
+            child: TextField(
               controller: _controller,
               style: const TextStyle(color: Colors.black),
               textAlignVertical: TextAlignVertical.center,
@@ -103,31 +123,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _bottomNavigationBar({required dynamic textField}) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.only(top: 15),
-          margin: const EdgeInsets.only(left: 2, right: 5, bottom: 1),
-          width: 290,
-          // height: 55.0,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.purple.withOpacity(0.5),
-          ),
-          child: SizedBox(
-            width: 200,
-            // width: MediaQuery.of(context).size.width - 90,
-            child: textField,
-          ),
         ),
         const SizedBox(
-          width: 10,
+          width: 18,
         ),
         InkWell(
           onTap: () {
@@ -151,3 +149,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+// Quick reminder of things that needs to be done.
